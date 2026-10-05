@@ -1,0 +1,8 @@
+# Seedance 2.5 — Argolink
+
+- Model: seedance-2.5
+- Intent: prompt playbook for video generation
+- Model page: https://argolink.io/gh-seedance-2-5-prompt-playbook
+- API docs: https://argolink.io/gh-unified-api-docs
+- Examples: examples/request.sh, examples/client.py
+- Contract: docs/model-contract.md
