@@ -1,0 +1,397 @@
+{
+  "model": "seedance-2.5",
+  "checked": "2026-10-07",
+  "usd_per_second": {"480p": 0.0874, "720p": 0.196, "1080p": 0.483},
+  "plays": [
+    {
+      "play": 1,
+      "title": "Lead with who does what",
+      "symptom": "The clip looks generic and the main subject is vague or missing.",
+      "before": {
+        "prompt": "Cinematic, breathtaking, ultra-detailed, award-winning, dramatic lighting, 8K, masterpiece: a lighthouse in a storm.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A lighthouse keeper in a yellow oilskin climbs the iron stairs on the outside of a lighthouse while storm waves explode on the rocks below. Wide shot from the sea, the camera rising and falling with the swell. Gray dusk light, the lamp's beam sweeping overhead. Sound: howling wind, crashing surf, boots on metal steps.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "The first sentence says who, where and what happens.",
+        "The quality words (cinematic, 8K, masterpiece) are gone: there is nothing in them to render.",
+        "Camera, light and sound each get one concrete line."
+      ],
+      "source": "BytePlus prompt guide, basic techniques: a one-sentence summary of subject, location, event, style and camera movement."
+    },
+    {
+      "play": 2,
+      "title": "One camera move per shot",
+      "symptom": "The camera wanders, jitters or ends up somewhere you did not plan.",
+      "before": {
+        "prompt": "A pastry chef plates a dessert while the camera zooms in, pans left, orbits around her, tilts up to the ceiling and cranes back down with a dolly zoom.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A pastry chef sets a single raspberry on a chocolate tart with tweezers. Slow push-in from a medium shot to a close-up of her hands; nothing else in the shot moves. Warm light from the kitchen pass. Sound: a soft clink and quiet kitchen ambience.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "Five competing moves become one: a slow push-in.",
+        "When a shot really needs two moves, give each its own time range (play 6)."
+      ],
+      "source": null
+    },
+    {
+      "play": 3,
+      "title": "Name the light: source, side and color",
+      "symptom": "Flat, evenly lit footage with no mood.",
+      "before": {
+        "prompt": "A woman reading a book in a cozy room with nice lighting and a good atmosphere.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A woman reads in an armchair beside a rain-streaked window at dusk. The only light is a brass floor lamp on her left, throwing warm yellow light across the pages and leaving the room behind her in deep blue shadow. Static medium shot. Sound: rain on the glass and a page turning.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "'Nice lighting' becomes a source (a floor lamp), a side (her left) and a color (warm yellow against blue).",
+        "The shadow side is described too; the contrast between the two is the mood."
+      ],
+      "source": null
+    },
+    {
+      "play": 4,
+      "title": "Show feelings through actions",
+      "symptom": "Faces are over-acted, or nothing visible happens at all.",
+      "before": {
+        "prompt": "A very sad, lonely old man feeling nostalgic and heartbroken about the past.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "An old man sitting alone at a kitchen table turns a wedding ring slowly between his fingers, sets it down beside a cold cup of tea and looks at the empty chair across from him. Close-up on his hands, then a medium shot. Gray morning light from the window. Sound: a ticking clock.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "Four feeling words become three small actions the camera can see.",
+        "The setting (a cold cup, an empty chair) carries the rest of the story."
+      ],
+      "source": "BytePlus prompt guide, advanced techniques: describe expressions in plain descriptive sentences rather than idioms."
+    },
+    {
+      "play": 5,
+      "title": "Keep strong emotion from turning into glowing eyes",
+      "symptom": "Eyes glow blue or red when a character is angry, shocked or ecstatic.",
+      "before": {
+        "prompt": "An extremely furious, fanatical football coach screams at the referee with burning, demonic eyes.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A football coach in a rain-soaked jacket shouts at the referee from the touchline, jaw clenched, pointing at the pitch. Normal human eyes, no glowing eyes. Medium close-up, floodlights behind him and rain in the light. Sound: his hoarse shouting and the roar of the crowd.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "The extreme words (furious, fanatical, demonic, burning) are replaced by visible behavior.",
+        "'Normal human eyes, no glowing eyes' is stated as a constraint."
+      ],
+      "source": "BytePlus prompt guide, FAQ 'Overreaction to emotional cues: Glowing eyes'."
+    },
+    {
+      "play": 6,
+      "title": "Timestamps in whole seconds, with no gaps",
+      "symptom": "Events happen in the wrong order, or one of them is skipped.",
+      "before": {
+        "prompt": "First the kettle boils, then she pours the tea, later she drinks it by the window and smiles, and finally the sun comes up.",
+        "duration": 10, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "[0-3s] Close-up: a copper kettle on a gas flame starts to whistle.\n[3-6s] Medium shot: she pours the water over loose tea in a glass pot, and the leaves unfurl.\n[6-10s] She sits by the window with the cup, takes a sip and smiles as the sunrise reaches her face.\nSound: the whistle, pouring water, birds outside.",
+        "duration": 10, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "Each event gets a range in whole seconds, and the ranges run from 0 to 10 with no gap or overlap, matching duration 10.",
+        "Seedance 2.5 follows integer-second timestamps; Seedance 2.0 follows shot numbers only."
+      ],
+      "source": "BytePlus prompt guide, 'Timestamps' and 'Differences from Seedance 2.0'."
+    },
+    {
+      "play": 7,
+      "title": "Budget the story to the seconds you have",
+      "symptom": "A long story in a short clip comes out as a blur of cuts, or half of it is missing.",
+      "before": {
+        "prompt": "A knight saddles his horse, rides through a dark forest, fights a dragon, rescues a princess from a tower and rides home at sunset.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A knight in dented armor swings up into the saddle of a gray horse in a misty courtyard at dawn, gathers the reins and looks toward the open gate. Medium shot, slow push-in. Sound: armor clanking and the horse snorting.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "Five scenes in five seconds become one beat that fits.",
+        "For the whole story, use up to 30 seconds with a timeline (play 6), or render it as several clips."
+      ],
+      "source": "BytePlus prompt guide, 'Timestamps': too much content in one range can cause excessive cuts or omitted plot."
+    },
+    {
+      "play": 8,
+      "title": "Write dialogue as Name (emotion): \"line\"",
+      "symptom": "Lines come out garbled or doubled, or subtitles get burned in.",
+      "before": {
+        "prompt": "The girl nervously says hi and then she says that she missed him so much, she is crying with tears, very emotional, I missed you so much.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "9:16"
+      },
+      "after": {
+        "prompt": "At an airport arrivals gate, a girl sees her brother and walks up to him.\nGirl (nervous, quiet): \"Hi.\"\nShe hugs him.\nGirl (tearful, laughing): \"I missed you so much.\"\nMedium two-shot, handheld. Sound: terminal announcements and rolling suitcases. No subtitles.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "9:16"
+      },
+      "changes": [
+        "Each line is quoted once, with its delivery in parentheses.",
+        "No words of a line are repeated in the stage directions."
+      ],
+      "source": "BytePlus prompt guide, FAQ 'Subtitles generated despite prompt constraints'."
+    },
+    {
+      "play": 9,
+      "title": "Name the sound you want, and every sound you don't",
+      "symptom": "Background music shows up even though the prompt said 'no music'.",
+      "before": {
+        "prompt": "A blacksmith works in his forge. No music.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "No music, no background score, no melody, no instrumental of any kind. A blacksmith hammers a glowing horseshoe on an anvil, sparks flying, then plunges it into a bucket of water in a burst of steam. Close-up, firelight. Sound: ringing hammer strikes, the roar of the bellows, a sharp hiss of steam. Again: no music, BGM or score.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "The sounds you do want are listed one by one.",
+        "Every word for music is excluded, at the start and again at the end."
+      ],
+      "source": "BytePlus prompt guide, FAQ 'Background music generated despite \"no BGM\"'."
+    },
+    {
+      "play": 10,
+      "title": "Spell on-screen text letter by letter",
+      "symptom": "Signs and titles come out misspelled.",
+      "before": {
+        "prompt": "A neon sign that says OPEN LATE flickers on in a diner window.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "after": {
+        "prompt": "A neon sign in a diner window flickers on. The red neon letters light up one at a time in this order: O, P, E, N, then L, A, T, E, spelling \"OPEN LATE\". Static shot from the street through rain on the glass. Sound: neon buzz and rain.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "16:9"
+      },
+      "changes": [
+        "The words are broken into letters that appear in sequence.",
+        "For longer text, the other fix is to supply the exact text as a reference image and point to it."
+      ],
+      "source": "BytePlus prompt guide, FAQ 'Text spelling errors'."
+    },
+    {
+      "play": 11,
+      "title": "Give every reference a role",
+      "symptom": "Assets get mixed up: the wrong face, the wrong pet, or a song used as a voice.",
+      "before": {
+        "prompt": "Make a video with these pictures and this song: a man and a dog on a beach.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [{"url": "https://example.com/man.png"}, {"url": "https://example.com/dog.png"}],
+        "reference_audios": [{"url": "https://example.com/song.mp3"}]
+      },
+      "after": {
+        "prompt": "@Image 1 is the man and @Image 2 is his dog. Follow the tempo and mood of @Audio 1 for the music. The man throws a stick into the surf and the dog sprints after it, splashing through the waves; the man laughs and jogs after them. Wide tracking shot along the waterline, late-afternoon sun. Sound: waves, barking, and music in the style of @Audio 1.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [{"url": "https://example.com/man.png"}, {"url": "https://example.com/dog.png"}],
+        "reference_audios": [{"url": "https://example.com/song.mp3"}]
+      },
+      "changes": [
+        "Each asset is named by its number and bound to one role in the first two sentences.",
+        "Every reference is used either way; naming tells the model which one is which."
+      ],
+      "source": "BytePlus prompt guide, 'Reference tasks (multi-asset mapping)'."
+    },
+    {
+      "play": 12,
+      "title": "Upload characters in the order they appear",
+      "symptom": "Two characters swap faces, or the first person on screen gets the wrong identity.",
+      "before": {
+        "prompt": "Marcus walks into the dark office first and switches on the desk lamp. Vera steps out of the shadow behind him and says: \"You're late.\" He freezes.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [{"url": "https://example.com/vera.png"}, {"url": "https://example.com/marcus.png"}]
+      },
+      "after": {
+        "prompt": "@Image 1 is Marcus, who appears first. @Image 2 is Vera. Marcus walks into the dark office and switches on the desk lamp. Vera steps out of the shadow behind him; he freezes.\nVera (cold, quiet): \"You're late.\"\nMedium shot, then a close-up of Marcus. Sound: footsteps and the click of the lamp. No subtitles.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [{"url": "https://example.com/marcus.png"}, {"url": "https://example.com/vera.png"}]
+      },
+      "changes": [
+        "The images are reordered so @Image 1 is the first person on screen.",
+        "Each name is tied to an image number; the before prompt never says which image is whom."
+      ],
+      "source": "BytePlus prompt guide, FAQ 'Incorrect character-to-reference mapping'."
+    },
+    {
+      "play": 13,
+      "title": "Take only the part of a reference you need",
+      "symptom": "People, places or sound from a reference clip leak into the new video.",
+      "reference_video_seconds": 5,
+      "before": {
+        "prompt": "Make a video like @Video 1 but with a ginger cat.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_videos": [{"url": "https://example.com/orbit.mp4"}]
+      },
+      "after": {
+        "prompt": "Refer only to the camera path in @Video 1, a slow low orbit; ignore its people, setting and sound. A ginger cat sits on a sunny windowsill watching birds outside while the camera orbits it. Soft morning light, potted herbs on the sill. Sound: birdsong and a quiet purr.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_videos": [{"url": "https://example.com/orbit.mp4"}]
+      },
+      "changes": [
+        "The prompt says which part of @Video 1 to take (the camera path) and which parts to ignore.",
+        "Reference video seconds are billed, so trim the clip to the move itself."
+      ],
+      "source": "BytePlus prompt guide, 'Reference tasks': state which part of an asset to reference."
+    },
+    {
+      "play": 14,
+      "title": "Edits: say what changes and what stays",
+      "symptom": "A vague edit changes too much, or nothing at all.",
+      "source_seconds": 6,
+      "before": {
+        "prompt": "Make it look better and more cinematic.",
+        "omni_reference_task_type": "edit", "resolution": "480p",
+        "reference_videos": [{"url": "https://example.com/source.mp4"}]
+      },
+      "after": {
+        "prompt": "Change only the color grade: warm teal-and-orange film tones with slightly deeper blacks. Keep every person, object, movement, camera move and sound exactly as they are.",
+        "omni_reference_task_type": "edit", "resolution": "480p",
+        "reference_videos": [{"url": "https://example.com/source.mp4"}]
+      },
+      "changes": [
+        "The change is one specific thing, the grade, described as a target look.",
+        "Everything that must stay is listed, which gives the edit a boundary."
+      ],
+      "source": "BytePlus prompt guide, 'Editing tasks': state the scope and the content to change."
+    },
+    {
+      "play": 15,
+      "title": "Edits: confine the change to a time range",
+      "symptom": "An edit meant for one moment alters the whole clip.",
+      "source_seconds": 8,
+      "before": {
+        "prompt": "Make him do a thumbs-up instead.",
+        "omni_reference_task_type": "edit", "resolution": "480p",
+        "reference_videos": [{"url": "https://example.com/source.mp4"}]
+      },
+      "after": {
+        "prompt": "From 5 to 8 seconds, change the man's gesture from waving to giving a thumbs-up toward the camera. Keep the first 5 seconds, his face, his clothes, the background and the audio unchanged.",
+        "omni_reference_task_type": "edit", "resolution": "480p",
+        "reference_videos": [{"url": "https://example.com/source.mp4"}]
+      },
+      "changes": [
+        "A time range limits the change to three seconds.",
+        "'From waving to a thumbs-up' names both the old action and the new one."
+      ],
+      "source": "BytePlus prompt guide, 'Editing tasks': use timestamps for partial edits and describe the change from A to B."
+    },
+    {
+      "play": 16,
+      "title": "First frame: describe the motion, not the picture",
+      "symptom": "The first frame gets reinterpreted instead of animated.",
+      "before": {
+        "prompt": "A beautiful photo of a mountain lake with pine trees, a wooden rowboat, blue sky, white clouds and perfect reflections, 4K.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "adaptive",
+        "start_image": {"url": "https://example.com/lake.png"}
+      },
+      "after": {
+        "prompt": "The water ripples gently as the rowboat drifts toward the shore; clouds move slowly over the peaks and their reflections shimmer. The camera stays still. Sound: lapping water and a distant bird call.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "adaptive",
+        "start_image": {"url": "https://example.com/lake.png"}
+      },
+      "changes": [
+        "The image already shows the scene, so the rewrite only says what moves.",
+        "On Seedance 2.5 a frame request takes aspect_ratio adaptive or none; a fixed ratio is rejected."
+      ],
+      "source": null
+    },
+    {
+      "play": 17,
+      "title": "First and last frame: give the transition a path",
+      "symptom": "The two frames melt into each other with no sense of how one became the other.",
+      "before": {
+        "prompt": "Transform the first image into the second image.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "adaptive",
+        "start_image": {"url": "https://example.com/seedling.png"},
+        "end_image": {"url": "https://example.com/winter-tree.png"}
+      },
+      "after": {
+        "prompt": "The camera pulls straight back from the close-up of the seedling in the first frame while the seasons pass: the sprout grows into a sapling, its leaves turn gold and fall, and snow settles, ending on the wide winter view of the full-grown tree in the last frame. One continuous pull-back, no cuts. Sound: wind that changes with the seasons.",
+        "duration": 8, "resolution": "480p", "aspect_ratio": "adaptive",
+        "start_image": {"url": "https://example.com/seedling.png"},
+        "end_image": {"url": "https://example.com/winter-tree.png"}
+      },
+      "changes": [
+        "The rewrite gives a camera path (a pull-back) and the order of the changes.",
+        "'Transform A into B' leaves the path between the frames unspecified."
+      ],
+      "source": null
+    },
+    {
+      "play": 18,
+      "title": "Declare keyframes when the order must hold",
+      "symptom": "Storyboard images are used out of order, or only loosely.",
+      "before": {
+        "prompt": "Make a story with these pictures of a balloon flight.",
+        "duration": 12, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [
+          {"url": "https://example.com/balloon-1.png"}, {"url": "https://example.com/balloon-2.png"},
+          {"url": "https://example.com/balloon-3.png"}, {"url": "https://example.com/balloon-4.png"}
+        ]
+      },
+      "after": {
+        "prompt": "Use @Image 1 to @Image 4 in order as keyframes. A hot-air balloon is inflated in a field at dawn (@Image 1), lifts off over the treetops (@Image 2), drifts above a river valley (@Image 3) and lands softly in a meadow at sunset (@Image 4). The camera follows the basket in one continuous take. Sound: the burner's roar, wind and birds.",
+        "duration": 12, "resolution": "480p", "aspect_ratio": "16:9",
+        "reference_images": [
+          {"url": "https://example.com/balloon-1.png"}, {"url": "https://example.com/balloon-2.png"},
+          {"url": "https://example.com/balloon-3.png"}, {"url": "https://example.com/balloon-4.png"}
+        ]
+      },
+      "changes": [
+        "The first sentence declares the images as keyframes in order.",
+        "Each beat of the story names its keyframe."
+      ],
+      "source": "BytePlus prompt guide, 'Keyframe reference'."
+    },
+    {
+      "play": 19,
+      "title": "Stage in depth for vertical 9:16",
+      "symptom": "In a tall frame, subjects are cut off at the sides or shrink to dots.",
+      "before": {
+        "prompt": "Two gunslingers face each other across a wide dusty street in a western town, standing far apart at the left and right edges.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "9:16"
+      },
+      "after": {
+        "prompt": "Vertical framing. One gunslinger stands in the foreground with his back to the camera, filling the lower third of the frame; his opponent stands small and centered further down the dusty street, framed between two rows of wooden buildings. Low angle, hot noon sun, dust blowing between them. Sound: wind and a creaking sign.",
+        "duration": 6, "resolution": "480p", "aspect_ratio": "9:16"
+      },
+      "changes": [
+        "Side-by-side staging is rearranged front to back, which fits a tall frame.",
+        "The prompt says where in the frame each subject sits."
+      ],
+      "source": null
+    },
+    {
+      "play": 20,
+      "title": "Make a clip that loops",
+      "symptom": "A clip meant to loop jumps at the seam.",
+      "before": {
+        "prompt": "A loop of a lava lamp.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "1:1"
+      },
+      "after": {
+        "prompt": "A lava lamp on a dark shelf: wax blobs rise, merge and sink in slow, steady motion. Locked-off camera, no cuts, no change in the light. The last frame matches the first frame so the clip loops seamlessly. Sound: a soft electrical hum.",
+        "duration": 5, "resolution": "480p", "aspect_ratio": "1:1"
+      },
+      "changes": [
+        "Camera and light are locked, so the only thing that changes is the wax.",
+        "The loop is stated as a condition: the last frame matches the first. Trim a few frames in your editor if the seam still shows."
+      ],
+      "source": null
+    }
+  ]
+}

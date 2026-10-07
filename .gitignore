@@ -1,8 +1,11 @@
 __pycache__/
-*.py[cod]
-.env
-.env.*
-!.env.example
-node_modules/
-dist/
 .pytest_cache/
+.env
+ab-results/
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.png
+*.jpg
+*.jpeg
