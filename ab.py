@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parent
 PLAYBOOK = ROOT / "plays.json"
 MODEL = "seedance-2.5"
 DEFAULT_BASE_URL = "https://argolink.io/v1"
+USER_AGENT = "seedance-2-5-prompt-playbook/1.0"
 VERSIONS = ("before", "after")
 PLACEHOLDER = re.compile(r"^https://example\.com/([\w-]+)\.\w+$")
 MENTION = re.compile(r"@(Image|Video|Audio) ?(\d+)")
@@ -186,6 +187,7 @@ class Api:
         data = json.dumps(payload).encode() if payload is not None else None
         request = urllib.request.Request(self.base_url + path, data=data, method=method)
         request.add_header("Authorization", f"Bearer {self.key}")
+        request.add_header("User-Agent", USER_AGENT)
         if data is not None:
             request.add_header("Content-Type", "application/json")
         try:
@@ -204,6 +206,7 @@ class Api:
                                                       "content_type": content_type, "size_bytes": len(data)})
         put = urllib.request.Request(ticket["upload_url"], data=data, method="PUT")
         put.add_header("Content-Type", content_type)
+        put.add_header("User-Agent", USER_AGENT)
         with urllib.request.urlopen(put, timeout=300):
             pass
         return ticket["media_url"]

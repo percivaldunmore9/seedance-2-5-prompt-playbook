@@ -103,6 +103,8 @@ def fake_api(monkeypatch, outcomes):
     def urlopen(request, timeout=None):
         url = request.full_url
         calls.append((request.get_method(), url))
+        agent = {key.lower(): value for key, value in request.header_items()}.get("user-agent")
+        assert agent == "seedance-2-5-prompt-playbook/1.0", f"{url} sent no explicit User-Agent"
         if url.endswith("/media/uploads"):
             name = len([c for c in calls if c[1].endswith("/media/uploads")])
             return Reply(json.dumps({"upload_url": f"https://bucket.test/{name}",
